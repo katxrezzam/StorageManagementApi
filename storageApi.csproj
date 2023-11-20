@@ -19,9 +19,6 @@
     <Folder Include="Controllers\" />
     <Folder Include="Helper\" />
     <Folder Include="Models\Dtos\" />
-    <Folder Include="Repository\" />
-    <Folder Include="Repository\Implementations\" />
-    <Folder Include="Repository\Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="Services\Implementations\" />
     <Folder Include="Services\Interfaces\" />
