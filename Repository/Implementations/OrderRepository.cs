@@ -1,4 +1,6 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
+
 namespace storageApi;
 
 public class OrderRepository(DataContext context) : IOrderRepository
@@ -16,28 +18,30 @@ public class OrderRepository(DataContext context) : IOrderRepository
         return await _context.Orders.FindAsync(orderId);
     }
 
-    public Task<ICollection<Order>> GetOrders()
+    public async Task<ICollection<Order>> GetOrders()
     {
-        throw new NotImplementedException();
+        return await _context.Orders.ToListAsync();
     }
 
-    public Task<bool> OrderExists(int orderId)
+    public async Task<bool> OrderExists(int orderId)
     {
-        throw new NotImplementedException();
+        return await _context.Orders.AnyAsync(o => o.OrderId == orderId);
     }
 
-    public Task<bool> RemoveOrder(Order order)
+    public async Task<bool> RemoveOrder(Order order)
     {
-        throw new NotImplementedException();
+        _context.Orders.Remove(order);
+        return await Save();
     }
 
-    public Task<bool> Save()
+    public async Task<bool> Save()
     {
-        throw new NotImplementedException();
+        return await _context.SaveChangesAsync() > 0;
     }
 
-    public Task<bool> UpdateOrder(Order order)
+    public async Task<bool> UpdateOrder(Order order)
     {
-        throw new NotImplementedException();
+        _context.Orders.Update(order);
+        return await Save();
     }
 }
