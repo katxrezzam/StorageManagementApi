@@ -1,10 +1,8 @@
 ﻿namespace storageApi;
 
-public class Customer
+public class CustomerDto
 {
-    public int CustomerId { get; set; }
     public string CustomerName { get; set; } = string.Empty;
     public string CustomerAddress { get; set; } = string.Empty;
     public string CustomerPhone { get; set; } = string.Empty;
-    public virtual ICollection<Delivery> Deliveries { get; set; } = null!;
 }

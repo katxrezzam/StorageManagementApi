@@ -1,11 +1,9 @@
 ﻿namespace storageApi;
 
-public class Provider
+public class ProviderDto
 {
-    public int ProviderId { get; set; }
     public string ProviderName { get; set; } = string.Empty;
     public string ProviderAddress { get; set; } = string.Empty;
     public string ProviderPhone { get; set; } = string.Empty;
     public string ProviderWeb { get; set; } = string.Empty;
-    public virtual ICollection<Order> Orders { get; set; } = null!;
 }

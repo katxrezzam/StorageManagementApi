@@ -1,8 +1,7 @@
 ﻿namespace storageApi;
 
-public class Product
+public class ProductDto
 {
-    public int ProductId { get; set; }
     public int ProductCode { get; set; }
     public string BarCode { get; set; } = string.Empty;
     public string ProductName { get; set; } = string.Empty;
@@ -13,8 +12,4 @@ public class Product
     public int PackedWidth { get; set; }
     public int PackedDepth { get; set; }
     public bool IsRefrigerated { get; set; }
-    public virtual ICollection<Inventory> Inventories { get; set; } = null!;
-    public virtual ICollection<Transfer> Transfers { get; set; } = null!;
-    public virtual ICollection<OrderDetail> OrderDetails { get; set; } = null!;
-    public virtual ICollection<DeliveryDetail> DeliveryDetails { get; set; } = null!;
 }
